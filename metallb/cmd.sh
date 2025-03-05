@@ -7,8 +7,9 @@ helm repo update
 # # 헬름 차트 설치
 helm install metallb bitnami/metallb \
     -n metallb --create-namespace \
-    -f values-metallb.yaml \
+    -f values.yaml \
     --version 6.3.15
 
-# 아이피 대역 범위 지정
-kubectl apply -f IPAddressPool.yaml
+# 1️⃣ IPAddressPool
+# 2️⃣ L2Advertisement
+kubectl apply -f metallb-crds.yaml

@@ -7,5 +7,5 @@ helm repo update
 # helm 차트 설치
 helm install ingress-nginx ingress-nginx/ingress-nginx \
     -n ingress-nginx --create-namespace \
-    -f values-ingress-nginx.yaml \
+    -f values.yaml \
     --version 4.12.0

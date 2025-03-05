@@ -1,0 +1,39 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt
+spec:
+  acme:
+    # Let's Encrypt ACME 서버의 URL을 지정 / production 환경의 URL을 사용
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      # ACME 계정을 관리하는 데 사용되는 secret을 지정
+      name: letsencrypt-key
+    # ACME 프로토콜에 대한 도메인 소유권을 검증하는 방법을 지정
+    solvers:
+      - http01:
+          ingress:
+            ingressClassName: nginx
+            podTemplate:
+              spec:
+                tolerations: []
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-staging # test 요도로 횟수제한없이 인증서 요청 가능
+spec:
+  acme:
+    # Let's Encrypt ACME 서버의 URL을 지정 / staging 환경의 URL을 사용
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      # ACME 계정을 관리하는 데 사용되는 secret을 지정
+      name: letsencrypt-staging-key
+    # ACME 프로토콜에 대한 도메인 소유권을 검증하는 방법을 지정
+    solvers:
+      - http01:
+          ingress:
+            ingressClassName: nginx
+            podTemplate:
+              spec:
+                tolerations: []
