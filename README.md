@@ -21,9 +21,12 @@
 
 ### 🛠 General System Tools Installation Order
 
-| **No** | **Tool**        | **Description**                                                                                                  |
-| ------ | --------------- | ---------------------------------------------------------------------------------------------------------------- |
-| 0️⃣     | `kubespray`     | ⚙️ Automated Kubernetes cluster deployment using **Ansible**, supporting both on-premises and cloud environments |
-| 1️⃣     | `metallb`       | ⚡ Load balancer for bare-metal Kubernetes clusters                                                              |
-| 2️⃣     | `ingress-nginx` | 🌐 Ingress controller for managing external access to services                                                   |
-| 3️⃣     | `cert-manager`  | 🔒 Automatically manages TLS certificates in Kubernetes                                                          |
+### 🛠 General System Tools Installation Order
+
+| **No** | **Tool**        | **Description**                                                   |
+| ------ | --------------- | ----------------------------------------------------------------- |
+| 0️⃣     | `kubespray`     | ⚙️ Ansible-based tool for automated Kubernetes cluster deployment |
+| 1️⃣     | `metallb`       | ⚡ Load balancer for bare-metal Kubernetes clusters               |
+| 2️⃣     | `ingress-nginx` | 🌐 Ingress controller for managing external access to services    |
+| 3️⃣     | `cert-manager`  | 🔒 Automatically manages TLS certificates in Kubernetes           |
+|  |
