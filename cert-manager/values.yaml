@@ -74,7 +74,7 @@ installCRDs: false
 crds:
   # This option decides if the CRDs should be installed
   # as part of the Helm installation.
-  enabled: false
+  enabled: true # ✅ true 로 설정해야만 정상적으로 설치됨❗️
 
   # This option makes it so that the "helm.sh/resource-policy": keep
   # annotation is added to the CRD. This will prevent Helm from uninstalling

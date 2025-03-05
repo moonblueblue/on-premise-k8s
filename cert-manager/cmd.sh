@@ -5,10 +5,10 @@ helm repo add cert-manager https://charts.jetstack.io
 helm repo update
 
 # # 헬름 차트 설치
-helm install my-cert-manager cert-manager/cert-manager --version 1.17.1 \
+helm install cert-manager cert-manager/cert-manager \
     --namespace cert-manager --create-namespace \
     -f values.yaml \
-    --version 6.3.15
+    --version 1.17.1
 
 # 1️⃣ ClusterIssuer
 # 2️⃣ ClusterIssuer(staging)
