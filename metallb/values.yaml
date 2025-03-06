@@ -16,6 +16,11 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
+  ## Security parameters
+  ##
+  security:
+    ## @param global.security.allowInsecureImages Allows skipping image verification
+    allowInsecureImages: false
   ## Compatibility adaptations for Kubernetes platforms
   ##
   compatibility:
@@ -155,7 +160,7 @@ controller:
   image:
     registry: docker.io
     repository: bitnami/metallb-controller
-    tag: 0.14.8-debian-12-r9
+    tag: 0.14.9-debian-12-r10
     digest: ""
     ## Specify a imagePullPolicy
     ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
@@ -251,26 +256,7 @@ controller:
   ## @param controller.tolerations Tolerations for controller pod assignment
   ## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
   ##
-  tolerations:
-    - effect: NoSchedule
-      key: node-role.kubernetes.io/control-plane
-      operator: Exists
-    - effect: NoSchedule
-      key: Role
-      operator: Equal
-      value: "segmentam"
-    - effect: NoSchedule
-      key: Service
-      operator: Equal
-      value: "db"
-    - effect: NoSchedule
-      key: Service
-      operator: Equal
-      value: "app"
-    - effect: NoSchedule
-      key: Service
-      operator: Equal
-      value: "system"
+  tolerations: []
   ## @param controller.affinity Affinity for controller pod assignment
   ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
   ##
@@ -582,7 +568,7 @@ speaker:
   image:
     registry: docker.io
     repository: bitnami/metallb-speaker
-    tag: 0.14.8-debian-12-r11
+    tag: 0.14.9-debian-12-r10
     digest: ""
     ## Specify a imagePullPolicy
     ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
@@ -723,26 +709,7 @@ speaker:
   ## @param speaker.tolerations Tolerations for speaker pod assignment
   ## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
   ##
-  tolerations:
-    - effect: NoSchedule
-      key: node-role.kubernetes.io/control-plane
-      operator: Exists
-    - effect: NoSchedule
-      key: Role
-      operator: Equal
-      value: "segmentam"
-    - effect: NoSchedule
-      key: Service
-      operator: Equal
-      value: "db"
-    - effect: NoSchedule
-      key: Service
-      operator: Equal
-      value: "app"
-    - effect: NoSchedule
-      key: Service
-      operator: Equal
-      value: "system"
+  tolerations: []
   ## @param speaker.affinity Affinity for speaker pod assignment
   ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
   ##
@@ -977,7 +944,7 @@ speaker:
       ##
       registry: docker.io
       repository: bitnami/metallb-speaker
-      tag: 0.14.8-debian-12-r11
+      tag: 0.14.9-debian-12-r10
       digest: ""
       pullPolicy: IfNotPresent
       pullSecrets: []

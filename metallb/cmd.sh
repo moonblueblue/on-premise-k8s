@@ -8,7 +8,7 @@ helm repo update
 helm install metallb bitnami/metallb \
     -n metallb --create-namespace \
     -f values.yaml \
-    --version 6.3.15
+    --version 6.4.8
 
 # 1️⃣ IPAddressPool
 # 2️⃣ L2Advertisement
