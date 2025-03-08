@@ -10,6 +10,7 @@ declare -a DIRECTORY_LIST=(
     minio
     mysql
     argocd
+    kube-prometheus-stack
 )
 
 # 헬름 차트로 스토리지클래스 생성 설치
