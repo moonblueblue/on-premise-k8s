@@ -495,7 +495,7 @@ controller:
   metrics:
     ## @param controller.metrics.enabled Enable the export of Prometheus metrics
     ##
-    enabled: false
+    enabled: true
     ## Prometheus Exporter service parameters
     ##
     service:
@@ -512,7 +512,7 @@ controller:
     serviceMonitor:
       ## @param controller.metrics.serviceMonitor.enabled Specify if a servicemonitor will be deployed for prometheus-operator
       ##
-      enabled: false
+      enabled: true
       ## @param controller.metrics.serviceMonitor.namespace Namespace which Prometheus is running in
       ## e.g:
       ## namespace: monitoring
@@ -1008,7 +1008,7 @@ speaker:
       serviceMonitor:
         ## @param speaker.frr.metrics.serviceMonitor.enabled Enable support for Prometheus Operator
         ##
-        enabled: false
+        enabled: true
         ## @param speaker.frr.metrics.serviceMonitor.namespace Namespace which Prometheus is running in
         ## e.g:
         ## namespace: monitoring
@@ -1105,7 +1105,7 @@ speaker:
   metrics:
     ## @param speaker.metrics.enabled Enable the export of Prometheus metrics
     ##
-    enabled: false
+    enabled: true
     ## Prometheus Exporter service parameters
     ##
     service:
@@ -1123,7 +1123,7 @@ speaker:
     serviceMonitor:
       ## @param speaker.metrics.serviceMonitor.enabled Enable support for Prometheus Operator
       ##
-      enabled: false
+      enabled: true
       ## @param speaker.metrics.serviceMonitor.namespace Namespace which Prometheus is running in
       ## e.g:
       ## namespace: monitoring
