@@ -779,13 +779,13 @@ controller:
   podLabels: {}
 
   # -- Resource limits and requests for the application controller pods
-  resources:
-    limits:
-      cpu: 500m
-      memory: 512Mi
-    requests:
-      cpu: 250m
-      memory: 256Mi
+  resources: {}
+  #  limits:
+  #    cpu: 500m
+  #    memory: 512Mi
+  #  requests:
+  #    cpu: 250m
+  #    memory: 256Mi
 
   # Application controller container ports
   containerPorts:
@@ -1064,13 +1064,13 @@ dex:
     imagePullPolicy: ""
     # -- Argo CD init image resources
     # @default -- `{}` (defaults to dex.resources)
-    resources:
-      requests:
-        cpu: 5m
-        memory: 96Mi
-      limits:
-        cpu: 10m
-        memory: 144Mi
+    resources: {}
+    #  requests:
+    #    cpu: 5m
+    #    memory: 96Mi
+    #  limits:
+    #    cpu: 10m
+    #    memory: 144Mi
 
   # -- Environment variables to pass to the Dex server
   env: []
@@ -1131,13 +1131,13 @@ dex:
   podLabels: {}
 
   # -- Resource limits and requests for dex
-  resources:
-    limits:
-      cpu: 50m
-      memory: 64Mi
-    requests:
-      cpu: 10m
-      memory: 32Mi
+  resources: {}
+  #  limits:
+  #    cpu: 50m
+  #    memory: 64Mi
+  #  requests:
+  #    cpu: 10m
+  #    memory: 32Mi
 
   # Dex container ports
   # NOTE: These ports are currently hardcoded and cannot be changed
@@ -1372,12 +1372,13 @@ redis:
 
     # -- Resource limits and requests for redis-exporter sidecar
     resources:
-      limits:
-        cpu: 50m
-        memory: 64Mi
-      requests:
-        cpu: 10m
-        memory: 32Mi
+      {}
+      # limits:
+      #   cpu: 50m
+      #   memory: 64Mi
+      # requests:
+      #   cpu: 10m
+      #   memory: 32Mi
 
   # -- Secrets with credentials to pull images from a private registry
   # @default -- `[]` (defaults to global.imagePullSecrets)
@@ -1452,13 +1453,13 @@ redis:
   podLabels: {}
 
   # -- Resource limits and requests for redis
-  resources:
-    limits:
-      cpu: 200m
-      memory: 128Mi
-    requests:
-      cpu: 100m
-      memory: 64Mi
+  resources: {}
+  #  limits:
+  #    cpu: 200m
+  #    memory: 128Mi
+  #  requests:
+  #    cpu: 100m
+  #    memory: 64Mi
 
   # -- Redis pod-level security context
   # @default -- See [values.yaml]
@@ -1728,13 +1729,13 @@ redisSecretInit:
   podLabels: {}
 
   # -- Resource limits and requests for Redis secret-init Job
-  resources:
-    limits:
-      cpu: 200m
-      memory: 128Mi
-    requests:
-      cpu: 100m
-      memory: 64Mi
+  resources: {}
+  #  limits:
+  #    cpu: 200m
+  #    memory: 128Mi
+  #  requests:
+  #    cpu: 100m
+  #    memory: 64Mi
 
   # -- Application controller container-level security context
   # @default -- See [values.yaml]
@@ -1912,13 +1913,13 @@ server:
           - ALL
 
     # -- Resource limits and requests for the argocd-extensions container
-    resources:
-      limits:
-        cpu: 50m
-        memory: 128Mi
-      requests:
-        cpu: 10m
-        memory: 64Mi
+    resources: {}
+    #  limits:
+    #    cpu: 50m
+    #    memory: 128Mi
+    #  requests:
+    #    cpu: 10m
+    #    memory: 64Mi
 
   # -- Additional containers to be added to the server pod
   ## Note: Supports use of custom Helm templates
@@ -1987,13 +1988,13 @@ server:
   podLabels: {}
 
   # -- Resource limits and requests for the Argo CD server
-  resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
-    requests:
-      cpu: 50m
-      memory: 64Mi
+  resources: {}
+  #  limits:
+  #    cpu: 100m
+  #    memory: 128Mi
+  #  requests:
+  #    cpu: 50m
+  #    memory: 64Mi
 
   # Server container ports
   containerPorts:
@@ -2652,13 +2653,13 @@ repoServer:
   podLabels: {}
 
   # -- Resource limits and requests for the repo server pods
-  resources:
-    limits:
-      cpu: 50m
-      memory: 128Mi
-    requests:
-      cpu: 10m
-      memory: 64Mi
+  resources: {}
+  #  limits:
+  #    cpu: 50m
+  #    memory: 128Mi
+  #  requests:
+  #    cpu: 10m
+  #    memory: 64Mi
 
   # Repo server container ports
   containerPorts:
@@ -3030,12 +3031,13 @@ applicationSet:
 
   # -- Resource limits and requests for the ApplicationSet controller pods.
   resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
-    requests:
-      cpu: 100m
-      memory: 128Mi
+    {}
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
 
   # ApplicationSet controller container ports
   containerPorts:
@@ -3422,12 +3424,13 @@ notifications:
 
   # -- Resource limits and requests for the notifications controller
   resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
-    requests:
-      cpu: 100m
-      memory: 128Mi
+    {}
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
 
   # Notification controller container ports
   containerPorts:
@@ -3911,12 +3914,13 @@ commitServer:
 
   # -- Resource limits and requests for the commit server pods.
   resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
-    requests:
-      cpu: 100m
-      memory: 128Mi
+    {}
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
 
   # -- [DNS configuration]
   dnsConfig: {}
