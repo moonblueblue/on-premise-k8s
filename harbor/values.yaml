@@ -612,11 +612,11 @@ certificateVolume:
   ##
   resources:
     requests:
-      cpu: 10m
-      memory: 32Mi
+      cpu: 50m
+      memory: 64Mi
     limits:
-      cpu: 10m
-      memory: 32Mi
+      cpu: 100m
+      memory: 128Mi
 ## volumePermissions: Change the owner and group of the persistent volume(s) mountpoint(s) to 'runAsUser:fsGroup' on each node
 ##
 volumePermissions:
@@ -662,11 +662,11 @@ volumePermissions:
   ##
   resources:
     requests:
-      cpu: 10m
-      memory: 32Mi
+      cpu: 50m
+      memory: 64Mi
     limits:
-      cpu: 10m
-      memory: 32Mi
+      cpu: 100m
+      memory: 128Mi
   ## Init container' Security Context
   ## Note: the chown of the data folder is done to containerSecurityContext.runAsUser
   ## and not the below volumePermissions.containerSecurityContext.runAsUser
@@ -828,11 +828,11 @@ nginx:
   ##
   resources:
     requests:
-      cpu: 10m
-      memory: 32Mi
+      cpu: 200m
+      memory: 256Mi
     limits:
-      cpu: 10m
-      memory: 32Mi
+      cpu: 500m
+      memory: 512Mi
   ## Configure NGINX pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param nginx.podSecurityContext.enabled Enabled NGINX pods' Security Context
@@ -1195,11 +1195,11 @@ portal:
   ##
   resources:
     requests:
-      cpu: 10m
-      memory: 32Mi
+      cpu: 150m
+      memory: 128Mi
     limits:
-      cpu: 10m
-      memory: 32Mi
+      cpu: 400m
+      memory: 256Mi
   ## Configure Harbor Portal pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param portal.podSecurityContext.enabled Enabled Harbor Portal pods' Security Context
@@ -1630,11 +1630,11 @@ core:
   ##
   resources:
     requests:
-      cpu: 10m
-      memory: 32Mi
+      cpu: 300m
+      memory: 512Mi
     limits:
-      cpu: 10m
-      memory: 32Mi
+      cpu: 600m
+      memory: 1Gi
   ## Configure Harbor Core pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param core.podSecurityContext.enabled Enabled Harbor Core pods' Security Context
@@ -2035,11 +2035,11 @@ jobservice:
   ##
   resources:
     requests:
-      cpu: 10m
-      memory: 32Mi
+      cpu: 250m
+      memory: 256Mi
     limits:
-      cpu: 10m
-      memory: 32Mi
+      cpu: 500m
+      memory: 512Mi
   ## Configure Harbor Jobservice pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param jobservice.podSecurityContext.enabled Enabled Harbor Jobservice pods' Security Context
@@ -2919,7 +2919,7 @@ trivy:
     debug: false
   ## @param trivy.enabled Enable Trivy
   ##
-  enabled: true
+  enabled: false
   ## @param trivy.debugMode The flag to enable Trivy debug mode
   ##
   debugMode: false
@@ -3088,6 +3088,7 @@ trivy:
     limits:
       cpu: 500m
       memory: 1024Mi
+
   ## Configure Trivy pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param trivy.podSecurityContext.enabled Enabled Trivy pods' Security Context
