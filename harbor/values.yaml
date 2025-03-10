@@ -615,8 +615,8 @@ certificateVolume:
       cpu: 50m
       memory: 64Mi
     limits:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 75m
+      memory: 96Mi
 ## volumePermissions: Change the owner and group of the persistent volume(s) mountpoint(s) to 'runAsUser:fsGroup' on each node
 ##
 volumePermissions:
@@ -665,8 +665,8 @@ volumePermissions:
       cpu: 50m
       memory: 64Mi
     limits:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 75m
+      memory: 96Mi
   ## Init container' Security Context
   ## Note: the chown of the data folder is done to containerSecurityContext.runAsUser
   ## and not the below volumePermissions.containerSecurityContext.runAsUser
@@ -815,7 +815,7 @@ nginx:
   ## @param nginx.resourcesPreset Set container resources according to one common preset (allowed values: none, nano, micro, small, medium, large, xlarge, 2xlarge). This is ignored if nginx.resources is set (nginx.resources is recommended for production).
   ## More information: https://github.com/bitnami/charts/blob/main/bitnami/common/templates/_resources.tpl#L15
   ##
-  resourcesPreset: "small"
+  resourcesPreset: "nano"
   ## @param nginx.resources Set container requests and limits for different resources like CPU or memory (essential for production workloads)
   ## Example:
   ## resources:
@@ -828,11 +828,11 @@ nginx:
   ##
   resources:
     requests:
-      cpu: 200m
-      memory: 256Mi
+      cpu: 50m
+      memory: 64Mi
     limits:
-      cpu: 500m
-      memory: 512Mi
+      cpu: 75m
+      memory: 96Mi
   ## Configure NGINX pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param nginx.podSecurityContext.enabled Enabled NGINX pods' Security Context
@@ -1182,7 +1182,7 @@ portal:
   ## @param portal.resourcesPreset Set container resources according to one common preset (allowed values: none, nano, micro, small, medium, large, xlarge, 2xlarge). This is ignored if portal.resources is set (portal.resources is recommended for production).
   ## More information: https://github.com/bitnami/charts/blob/main/bitnami/common/templates/_resources.tpl#L15
   ##
-  resourcesPreset: "small"
+  resourcesPreset: "nano"
   ## @param portal.resources Set container requests and limits for different resources like CPU or memory (essential for production workloads)
   ## Example:
   ## resources:
@@ -1195,11 +1195,11 @@ portal:
   ##
   resources:
     requests:
-      cpu: 150m
-      memory: 128Mi
+      cpu: 50m
+      memory: 64Mi
     limits:
-      cpu: 400m
-      memory: 256Mi
+      cpu: 75m
+      memory: 96Mi
   ## Configure Harbor Portal pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param portal.podSecurityContext.enabled Enabled Harbor Portal pods' Security Context
@@ -1617,7 +1617,7 @@ core:
   ## @param core.resourcesPreset Set container resources according to one common preset (allowed values: none, nano, micro, small, medium, large, xlarge, 2xlarge). This is ignored if core.resources is set (core.resources is recommended for production).
   ## More information: https://github.com/bitnami/charts/blob/main/bitnami/common/templates/_resources.tpl#L15
   ##
-  resourcesPreset: "small"
+  resourcesPreset: "nano"
   ## @param core.resources Set container requests and limits for different resources like CPU or memory (essential for production workloads)
   ## Example:
   ## resources:
@@ -1630,11 +1630,11 @@ core:
   ##
   resources:
     requests:
-      cpu: 300m
-      memory: 512Mi
+      cpu: 50m
+      memory: 64Mi
     limits:
-      cpu: 600m
-      memory: 1Gi
+      cpu: 75m
+      memory: 96Mi
   ## Configure Harbor Core pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param core.podSecurityContext.enabled Enabled Harbor Core pods' Security Context
@@ -2022,7 +2022,7 @@ jobservice:
   ## @param jobservice.resourcesPreset Set container resources according to one common preset (allowed values: none, nano, micro, small, medium, large, xlarge, 2xlarge). This is ignored if jobservice.resources is set (jobservice.resources is recommended for production).
   ## More information: https://github.com/bitnami/charts/blob/main/bitnami/common/templates/_resources.tpl#L15
   ##
-  resourcesPreset: "small"
+  resourcesPreset: "nano"
   ## @param jobservice.resources Set container requests and limits for different resources like CPU or memory (essential for production workloads)
   ## Example:
   ## resources:
@@ -2035,11 +2035,11 @@ jobservice:
   ##
   resources:
     requests:
-      cpu: 250m
-      memory: 256Mi
+      cpu: 50m
+      memory: 64Mi
     limits:
-      cpu: 500m
-      memory: 512Mi
+      cpu: 75m
+      memory: 96Mi
   ## Configure Harbor Jobservice pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param jobservice.podSecurityContext.enabled Enabled Harbor Jobservice pods' Security Context
@@ -2652,7 +2652,7 @@ registry:
     ## @param registry.server.resourcesPreset Set container resources according to one common preset (allowed values: none, nano, micro, small, medium, large, xlarge, 2xlarge). This is ignored if registry.server.resources is set (registry.server.resources is recommended for production).
     ## More information: https://github.com/bitnami/charts/blob/main/bitnami/common/templates/_resources.tpl#L15
     ##
-    resourcesPreset: "small"
+    resourcesPreset: "nano"
     ## @param registry.server.resources Set container requests and limits for different resources like CPU or memory (essential for production workloads)
     ## Example:
     ## resources:
@@ -2665,11 +2665,11 @@ registry:
     ##
     resources:
       requests:
-        cpu: 300m
-        memory: 512Mi
+        cpu: 50m
+        memory: 64Mi
       limits:
-        cpu: 500m
-        memory: 1024Mi
+        cpu: 75m
+        memory: 96Mi
     ## Configure Harbor Registry main containers (only main one) Security Context
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-container
     ## @param registry.server.containerSecurityContext.enabled Enabled containers' Security Context
@@ -2825,7 +2825,7 @@ registry:
     ## @param registry.controller.resourcesPreset Set container resources according to one common preset (allowed values: none, nano, micro, small, medium, large, xlarge, 2xlarge). This is ignored if registry.controller.resources is set (registry.controller.resources is recommended for production).
     ## More information: https://github.com/bitnami/charts/blob/main/bitnami/common/templates/_resources.tpl#L15
     ##
-    resourcesPreset: "small"
+    resourcesPreset: "nano"
     ## @param registry.controller.resources Set container requests and limits for different resources like CPU or memory (essential for production workloads)
     ## Example:
     ## resources:
@@ -2838,11 +2838,11 @@ registry:
     ##
     resources:
       requests:
-        cpu: 300m
-        memory: 512Mi
+        cpu: 50m
+        memory: 64Mi
       limits:
-        cpu: 500m
-        memory: 1024Mi
+        cpu: 75m
+        memory: 96Mi
     ## Configure Harbor Registryctl containers (only main one) Security Context
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-container
     ## @param registry.controller.containerSecurityContext.enabled Enabled containers' Security Context
@@ -3070,7 +3070,7 @@ trivy:
   ## @param trivy.resourcesPreset Set container resources according to one common preset (allowed values: none, nano, micro, small, medium, large, xlarge, 2xlarge). This is ignored if trivy.resources is set (trivy.resources is recommended for production).
   ## More information: https://github.com/bitnami/charts/blob/main/bitnami/common/templates/_resources.tpl#L15
   ##
-  resourcesPreset: "small"
+  resourcesPreset: "nano"
   ## @param trivy.resources Set container requests and limits for different resources like CPU or memory (essential for production workloads)
   ## Example:
   ## resources:
@@ -3083,11 +3083,11 @@ trivy:
   ##
   resources:
     requests:
-      cpu: 300m
-      memory: 512Mi
+      cpu: 50m
+      memory: 64Mi
     limits:
-      cpu: 500m
-      memory: 1024Mi
+      cpu: 75m
+      memory: 96Mi
 
   ## Configure Trivy pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
@@ -3454,11 +3454,11 @@ exporter:
   ##
   resources:
     requests:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 50m
+      memory: 64Mi
     limits:
-      cpu: 200m
-      memory: 256Mi
+      cpu: 75m
+      memory: 258Mi
   ## Configure Exporter pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param exporter.podSecurityContext.enabled Enabled Exporter pods' Security Context
@@ -3734,11 +3734,11 @@ postgresql:
     ##
     resources:
       requests:
-        cpu: 100m
-        memory: 128Mi
+        cpu: 50m
+        memory: 64Mi
       limits:
-        cpu: 200m
-        memory: 256Mi
+        cpu: 75m
+        memory: 96Mi
 ## External PostgreSQL configuration
 ## All of these values are only used when postgresql.enabled is set to false
 ## @param externalDatabase.host Database host
@@ -3811,11 +3811,11 @@ redis:
     ##
     resources:
       requests:
-        cpu: 100m
-        memory: 128Mi
+        cpu: 50m
+        memory: 64Mi
       limits:
-        cpu: 200m
-        memory: 256Mi
+        cpu: 75m
+        memory: 96Mi
 ## External Redis&reg; configuration
 ## All of these values are only used when redis.enabled is set to false
 ## @param externalRedis.host Redis&reg; host
