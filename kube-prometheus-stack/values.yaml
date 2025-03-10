@@ -59,11 +59,11 @@ crds:
     ##
     resources:
       requests:
-        memory: "64Mi"
-        cpu: "250m"
+        cpu: 50m
+        memory: 64Mi
       limits:
-        memory: "128Mi"
-        cpu: "500m"
+        cpu: 75m
+        memory: 96Mi
 
     ## Additional volumes
     ##
@@ -1066,7 +1066,11 @@ alertmanager:
     ##
     resources:
       requests:
-        memory: 400Mi
+        cpu: 50m
+        memory: 64Mi
+      limits:
+        cpu: 75m
+        memory: 96Mi
 
     ## Pod anti-affinity can prevent the scheduler from placing Prometheus replicas on the same node.
     ## The default value "soft" means that the scheduler should *prefer* to not schedule two replica pods onto the same node but no guarantee is provided.
@@ -2787,12 +2791,12 @@ prometheusOperator:
       ## Resource limits & requests
       ##
       resources:
-        limits:
-          cpu: 200m
-          memory: 200Mi
         requests:
-          cpu: 100m
-          memory: 100Mi
+          cpu: 50m
+          memory: 64Mi
+        limits:
+          cpu: 75m
+          memory: 96Mi
 
       # Required for use in managed kubernetes clusters (such as AWS EKS) with custom CNI (such as calico),
       # because control-plane managed by AWS cannot communicate with pods' IP CIDR and admission webhooks are not working
@@ -2869,12 +2873,12 @@ prometheusOperator:
         sha: ""
         pullPolicy: IfNotPresent
       resources:
-        limits:
-          cpu: 100m
-          memory: 100Mi
         requests:
-          cpu: 100m
-          memory: 100Mi
+          cpu: 50m
+          memory: 64Mi
+        limits:
+          cpu: 75m
+          memory: 96Mi
       ## Provide a priority class name to the webhook patching job
       ##
       priorityClassName: ""
@@ -3145,12 +3149,12 @@ prometheusOperator:
   ## Resource limits & requests
   ##
   resources:
-  limits:
-    cpu: 200m
-    memory: 200Mi
-  requests:
-    cpu: 100m
-    memory: 100Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 75m
+      memory: 96Mi
 
   ## Operator Environment
   ##  env:
@@ -3293,11 +3297,11 @@ prometheusOperator:
     # resource config for prometheusConfigReloader
     resources:
       requests:
-        cpu: 200m
-        memory: 50Mi
+        cpu: 50m
+        memory: 64Mi
       limits:
-        cpu: 200m
-        memory: 50Mi
+        cpu: 75m
+        memory: 96Mi
 
   ## Thanos side-car image when configured
   ##
@@ -4270,7 +4274,11 @@ prometheus:
     ##
     resources:
       requests:
-        memory: 400Mi
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 150m
+        memory: 196Mi
 
     ## Prometheus StorageSpec for persistent data
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/platform/storage.md
@@ -5219,7 +5227,11 @@ thanosRuler:
     ##
     resources:
       requests:
-        memory: 400Mi
+        cpu: 50m
+        memory: 64Mi
+      limits:
+        cpu: 75m
+        memory: 96Mi
 
     ## Pod anti-affinity can prevent the scheduler from placing Prometheus replicas on the same node.
     ## The default value "soft" means that the scheduler should *prefer* to not schedule two replica pods onto the same node but no guarantee is provided.
