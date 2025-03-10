@@ -4271,14 +4271,14 @@ prometheus:
     remoteWriteDashboards: false
 
     ## Resource limits & requests
-    ##
+    ## ✅ 최소한으로 지정해도 아래와 같은 정도의 리소스가 필요함 ‼️
     resources:
       requests:
-        cpu: 100m
-        memory: 128Mi
+        cpu: 200m
+        memory: 256Mi
       limits:
-        cpu: 150m
-        memory: 196Mi
+        cpu: 300m
+        memory: 384Mi
 
     ## Prometheus StorageSpec for persistent data
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/platform/storage.md
