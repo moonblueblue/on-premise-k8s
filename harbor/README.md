@@ -5,7 +5,7 @@
 
 ### Helm Chart Document
 
-- 🔗 Link : (https://artifacthub.io/packages/helm/harbor/harbor)
+- 🔗 Link : (https://artifacthub.io/packages/helm/bitnami/harbor)
 
 ### Set-up and Install
 

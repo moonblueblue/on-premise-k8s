@@ -10,13 +10,14 @@ declare -a DIRECTORY_LIST=(
     minio
     mysql
     argocd
+    harbor
     kube-prometheus-stack
 )
 
 # 헬름 차트로 스토리지클래스 생성 설치
 for directory in "${DIRECTORY_LIST[@]}"; do
 
-    helm install nfs-provisioner-$directory nfs-provisioner/nfs-subdir-external-provisioner \
+    helm upgrade --install nfs-provisioner-$directory nfs-provisioner/nfs-subdir-external-provisioner \
         -n nfs-provisioner --create-namespace \
         -f values.yaml \
         --version 4.0.18 \

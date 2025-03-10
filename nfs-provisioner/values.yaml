@@ -9,7 +9,7 @@ imagePullSecrets: []
 
 nfs:
   server: 172.30.1.52 # ✅ IP address of the NFS server
-  path:  # ✅ 파라미터로 맵핑 : /nfs-share/$directory
+  path: # ✅ 파라미터로 맵핑 : /nfs-share/$directory
   mountOptions:
   volumeName: # ✅ 파라미터로 맵핑 : nfs-repo-$directory
   # Reclaim policy for the main nfs volume
@@ -92,13 +92,13 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name:
 
-resources: {}
-  # limits:
-  #  cpu: 100m
-  #  memory: 128Mi
-  # requests:
-  #  cpu: 100m
-  #  memory: 128Mi
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
 
 nodeSelector: {}
 
