@@ -57,10 +57,7 @@ crds:
     ## Define resources requests and limits for single Pods.
     ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
     ##
-    resources:
-      requests:
-        cpu: 50m
-        memory: 64Mi
+    resources: {}
 
     ## Additional volumes
     ##
@@ -601,12 +598,7 @@ alertmanager:
 
     annotations:
       kubernetes.io/ingress.class: nginx
-      nginx.ingress.kubernetes.io/proxy-body-size: 1m
-      nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
-      nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
-      nginx.ingress.kubernetes.io/rewrite-target: /
-      nginx.ingress.kubernetes.io/ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/use-regex: "true"
+      kubernetes.io/tls-acme: "true"
       cert-manager.io/cluster-issuer: letsencrypt
 
     labels: {}
@@ -1061,10 +1053,7 @@ alertmanager:
     ## Define resources requests and limits for single Pods.
     ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
     ##
-    resources:
-      requests:
-        cpu: 50m
-        memory: 64Mi
+    resources: {}
 
     ## Pod anti-affinity can prevent the scheduler from placing Prometheus replicas on the same node.
     ## The default value "soft" means that the scheduler should *prefer* to not schedule two replica pods onto the same node but no guarantee is provided.
@@ -1271,12 +1260,6 @@ grafana:
     annotations:
       kubernetes.io/ingress.class: nginx
       kubernetes.io/tls-acme: "true"
-      nginx.ingress.kubernetes.io/proxy-body-size: 1m
-      nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
-      nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
-      nginx.ingress.kubernetes.io/rewrite-target: /
-      nginx.ingress.kubernetes.io/ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/use-regex: "true"
       cert-manager.io/cluster-issuer: letsencrypt
 
     ## Labels to be added to the Ingress
@@ -2784,10 +2767,7 @@ prometheusOperator:
 
       ## Resource limits & requests
       ##
-      resources:
-        requests:
-          cpu: 50m
-          memory: 64Mi
+      resources: {}
 
       # Required for use in managed kubernetes clusters (such as AWS EKS) with custom CNI (such as calico),
       # because control-plane managed by AWS cannot communicate with pods' IP CIDR and admission webhooks are not working
@@ -2863,10 +2843,7 @@ prometheusOperator:
         tag: v1.5.1 # latest tag: https://github.com/kubernetes/ingress-nginx/blob/main/images/kube-webhook-certgen/TAG
         sha: ""
         pullPolicy: IfNotPresent
-      resources:
-        requests:
-          cpu: 50m
-          memory: 64Mi
+      resources: {}
       ## Provide a priority class name to the webhook patching job
       ##
       priorityClassName: ""
@@ -3136,10 +3113,7 @@ prometheusOperator:
 
   ## Resource limits & requests
   ##
-  resources:
-    requests:
-      cpu: 50m
-      memory: 64Mi
+  resources: {}
 
   ## Operator Environment
   ##  env:
@@ -3280,10 +3254,7 @@ prometheusOperator:
     enableProbe: false
 
     # resource config for prometheusConfigReloader
-    resources:
-      requests:
-        cpu: 50m
-        memory: 64Mi
+    resources: {}
 
   ## Thanos side-car image when configured
   ##
@@ -3647,12 +3618,6 @@ prometheus:
     annotations:
       kubernetes.io/ingress.class: nginx
       kubernetes.io/tls-acme: "true"
-      nginx.ingress.kubernetes.io/proxy-body-size: 1m
-      nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
-      nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
-      nginx.ingress.kubernetes.io/rewrite-target: /
-      nginx.ingress.kubernetes.io/ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/use-regex: "true"
       cert-manager.io/cluster-issuer: letsencrypt
 
     labels: {}
@@ -5200,10 +5165,7 @@ thanosRuler:
     ## Define resources requests and limits for single Pods.
     ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
     ##
-    resources:
-      requests:
-        cpu: 50m
-        memory: 64Mi
+    resources: {}
 
     ## Pod anti-affinity can prevent the scheduler from placing Prometheus replicas on the same node.
     ## The default value "soft" means that the scheduler should *prefer* to not schedule two replica pods onto the same node but no guarantee is provided.
