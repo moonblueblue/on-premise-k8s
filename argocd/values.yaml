@@ -783,9 +783,6 @@ controller:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
 
   # Application controller container ports
   containerPorts:
@@ -1068,9 +1065,6 @@ dex:
       requests:
         cpu: 5m
         memory: 96Mi
-      limits:
-        cpu: 10m
-        memory: 144Mi
 
   # -- Environment variables to pass to the Dex server
   env: []
@@ -1132,9 +1126,6 @@ dex:
 
   # -- Resource limits and requests for dex
   resources:
-    limits:
-      cpu: 50m
-      memory: 64Mi
     requests:
       cpu: 10m
       memory: 32Mi
@@ -1372,9 +1363,6 @@ redis:
 
     # -- Resource limits and requests for redis-exporter sidecar
     resources:
-      limits:
-        cpu: 50m
-        memory: 64Mi
       requests:
         cpu: 10m
         memory: 32Mi
@@ -1456,9 +1444,6 @@ redis:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
 
   # -- Redis pod-level security context
   # @default -- See [values.yaml]
@@ -1732,9 +1717,6 @@ redisSecretInit:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
 
   # -- Application controller container-level security context
   # @default -- See [values.yaml]
@@ -1913,9 +1895,6 @@ server:
 
     # -- Resource limits and requests for the argocd-extensions container
     resources:
-      limits:
-        cpu: 50m
-        memory: 128Mi
       requests:
         cpu: 10m
         memory: 64Mi
@@ -1991,9 +1970,6 @@ server:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
 
   # Server container ports
   containerPorts:
@@ -2653,9 +2629,6 @@ repoServer:
 
   # -- Resource limits and requests for the repo server pods
   resources:
-    limits:
-      cpu: 50m
-      memory: 128Mi
     requests:
       cpu: 10m
       memory: 64Mi
@@ -3033,9 +3006,6 @@ applicationSet:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
 
   # ApplicationSet controller container ports
   containerPorts:
@@ -3425,9 +3395,6 @@ notifications:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
 
   # Notification controller container ports
   containerPorts:
@@ -3914,9 +3881,6 @@ commitServer:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
 
   # -- [DNS configuration]
   dnsConfig: {}

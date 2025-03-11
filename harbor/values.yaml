@@ -614,9 +614,7 @@ certificateVolume:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
+    
 ## volumePermissions: Change the owner and group of the persistent volume(s) mountpoint(s) to 'runAsUser:fsGroup' on each node
 ##
 volumePermissions:
@@ -664,9 +662,7 @@ volumePermissions:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
+    
   ## Init container' Security Context
   ## Note: the chown of the data folder is done to containerSecurityContext.runAsUser
   ## and not the below volumePermissions.containerSecurityContext.runAsUser
@@ -830,9 +826,7 @@ nginx:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
+    
   ## Configure NGINX pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param nginx.podSecurityContext.enabled Enabled NGINX pods' Security Context
@@ -1197,9 +1191,7 @@ portal:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
+    
   ## Configure Harbor Portal pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param portal.podSecurityContext.enabled Enabled Harbor Portal pods' Security Context
@@ -1632,9 +1624,7 @@ core:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
+    
   ## Configure Harbor Core pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param core.podSecurityContext.enabled Enabled Harbor Core pods' Security Context
@@ -2037,9 +2027,7 @@ jobservice:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
+    
   ## Configure Harbor Jobservice pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param jobservice.podSecurityContext.enabled Enabled Harbor Jobservice pods' Security Context
@@ -2667,9 +2655,7 @@ registry:
       requests:
         cpu: 50m
         memory: 64Mi
-      limits:
-        cpu: 75m
-        memory: 96Mi
+      ##
     ## Configure Harbor Registry main containers (only main one) Security Context
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-container
     ## @param registry.server.containerSecurityContext.enabled Enabled containers' Security Context
@@ -2840,9 +2826,7 @@ registry:
       requests:
         cpu: 50m
         memory: 64Mi
-      limits:
-        cpu: 75m
-        memory: 96Mi
+      ##
     ## Configure Harbor Registryctl containers (only main one) Security Context
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-container
     ## @param registry.controller.containerSecurityContext.enabled Enabled containers' Security Context
@@ -3085,9 +3069,7 @@ trivy:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 96Mi
+    
 
   ## Configure Trivy pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
@@ -3456,9 +3438,7 @@ exporter:
     requests:
       cpu: 50m
       memory: 64Mi
-    limits:
-      cpu: 75m
-      memory: 258Mi
+    
   ## Configure Exporter pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param exporter.podSecurityContext.enabled Enabled Exporter pods' Security Context
@@ -3736,9 +3716,7 @@ postgresql:
       requests:
         cpu: 50m
         memory: 64Mi
-      limits:
-        cpu: 75m
-        memory: 96Mi
+      ##
 ## External PostgreSQL configuration
 ## All of these values are only used when postgresql.enabled is set to false
 ## @param externalDatabase.host Database host
@@ -3813,9 +3791,7 @@ redis:
       requests:
         cpu: 50m
         memory: 64Mi
-      limits:
-        cpu: 75m
-        memory: 96Mi
+      ##
 ## External Redis&reg; configuration
 ## All of these values are only used when redis.enabled is set to false
 ## @param externalRedis.host Redis&reg; host
