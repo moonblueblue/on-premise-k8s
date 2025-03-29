@@ -1,3 +1,5 @@
+# @format
+
 # Copyright Broadcom, Inc. All Rights Reserved.
 # SPDX-License-Identifier: APACHE-2.0
 
@@ -505,7 +507,9 @@ primary:
   ##  - name: TZ
   ##    value: "Europe/Paris"
   ##
-  extraEnvVars: []
+  extraEnvVars:
+    - name: TZ
+      value: Asia/Seoul
   ## @param primary.extraEnvVarsCM Name of existing ConfigMap containing extra env vars for MySQL primary containers
   ##
   extraEnvVarsCM: ""
@@ -941,7 +945,9 @@ secondary:
   ##  - name: TZ
   ##    value: "Europe/Paris"
   ##
-  extraEnvVars: []
+  extraEnvVars:
+    - name: TZ
+      value: Asia/Seoul
   ## @param secondary.extraEnvVarsCM Name of existing ConfigMap containing extra env vars for MySQL secondary containers
   ##
   extraEnvVarsCM: ""
