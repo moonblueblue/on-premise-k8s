@@ -1,0 +1,22 @@
+# @format
+
+global:
+  variant: distroless
+  resources: {}
+
+# Overrides for the `istiod-remote` dep
+istiod:
+  enabled: true
+  profile: ambient
+  resources: {}
+
+# Overrides for the `ztunnel` dep
+ztunnel:
+  profile: ambient
+  resourceName: ztunnel
+  resources: {}
+
+# Overrides for the `cni` dep
+cni:
+  profile: ambient
+  resources: {}
