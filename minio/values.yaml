@@ -1,3 +1,5 @@
+# @format
+
 # Copyright Broadcom, Inc. All Rights Reserved.
 # SPDX-License-Identifier: APACHE-2.0
 
@@ -657,11 +659,11 @@ resourcesPreset: "micro"
 ##
 resources:
   requests:
-    cpu: 100m
-    memory: 128Mi
+    cpu: 200m
+    memory: 512Mi
   limits:
-    cpu: 100m
-    memory: 128Mi
+    cpu: 200m
+    memory: 512Mi
 ## Configure extra options for liveness probe
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes
 ## @param livenessProbe.enabled Enable livenessProbe
@@ -1126,7 +1128,7 @@ persistence:
 volumePermissions:
   ## @param volumePermissions.enabled Enable init container that changes the owner and group of the persistent volume(s) mountpoint to `runAsUser:fsGroup`
   ##
-  enabled: false
+  enabled: true # ✅
   ## @param volumePermissions.image.registry [default: REGISTRY_NAME] Init container volume-permissions image registry
   ## @param volumePermissions.image.repository [default: REPOSITORY_NAME/os-shell] Init container volume-permissions image repository
   ## @skip volumePermissions.image.tag Init container volume-permissions image tag (immutable tags are recommended)
