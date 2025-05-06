@@ -261,6 +261,7 @@ primary:
   ##
   configuration: |-
     [mysqld]
+    max_connections=500
     authentication_policy='{{- .Values.auth.authenticationPolicy | default "* ,," }}'
     skip-name-resolve
     explicit_defaults_for_timestamp
